@@ -1,13 +1,3 @@
-:root {
-  --color-brand--1: #ffb545;
-  --color-brand--2: #00c46a;
-  --color-dark--1: #2d3439;
-  --color-dark--2: #42484d;
-  --color-light--1: #aaa;
-  --color-light--2: #ececec;
-  --color-light--3: rgb(214, 222, 224);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -21,10 +11,10 @@ html {
 
 body {
   font-family: "Manrope", sans-serif;
-  color: var(--color-light--2);
   font-weight: 400;
   line-height: 1.6;
   height: 100vh;
+  color: #ececec;
   overscroll-behavior-y: none;
   background-color: #fff;
   padding: 2.5rem;
@@ -34,19 +24,18 @@ body {
 /* GENERAL */
 a:link,
 a:visited {
-  color: var(--color-brand--1);
+  color: #ffb545;
 }
 
 /* SIDEBAR */
 .sidebar {
   flex-basis: 50rem;
-  background-color: var(--color-dark--1);
+  background-color: #2d3439;
   padding: 3rem 5rem 4rem 5rem;
   display: flex;
   flex-direction: column;
 }
-
-.logo {
+.sidebar--logo {
   height: 5.2rem;
   align-self: center;
   margin-bottom: 4rem;
@@ -58,13 +47,12 @@ a:visited {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
 .workouts::-webkit-scrollbar {
   width: 0;
 }
 
 .workout {
-  background-color: var(--color-dark--2);
+  background-color: #42484d;
   border-radius: 5px;
   padding: 1.5rem 2.25rem;
   margin-bottom: 1.75rem;
@@ -75,11 +63,11 @@ a:visited {
 }
 
 .workout--running {
-  border-left: 5px solid var(--color-brand--2);
+  border-left: 5px solid #00c46a;
 }
 
 .workout--cycling {
-  border-left: 5px solid var(--color-brand--1);
+  border-left: 5px solid #ffb545;
 }
 
 .workout__title {
@@ -106,13 +94,13 @@ a:visited {
 
 .workout__unit {
   font-size: 1.1rem;
-  color: var(--color-light--1);
+  color: #aaa;
   text-transform: uppercase;
   font-weight: 800;
 }
 
 .form {
-  background-color: var(--color-dark--2);
+  background-color: #42484d;
   border-radius: 5px;
   padding: 1.5rem 2.75rem;
   margin-bottom: 1.75rem;
@@ -154,7 +142,7 @@ a:visited {
   font-size: 1.4rem;
   border: none;
   border-radius: 3px;
-  background-color: var(--color-light--3);
+  background-color: rgb(214, 222, 224);
   transition: all 0.2s;
 }
 
@@ -171,31 +159,27 @@ a:visited {
   margin-top: auto;
   font-size: 1.3rem;
   text-align: center;
-  color: var(--color-light--1);
+  color: #aaa;
 }
-
-.twitter-link:link,
-.twitter-link:visited {
-  color: var(--color-light--1);
+.copyright a:link, .copyright a:visited {
+  color: #aaa;
   transition: all 0.2s;
 }
-
-.twitter-link:hover,
-.twitter-link:active {
-  color: var(--color-light--2);
+.copyright a:hover, .copyright a:active {
+  color: #ececec;
 }
 
 /* MAP */
 #map {
   flex: 1;
   height: 100%;
-  background-color: var(--color-light--1);
+  background-color: #aaa;
 }
 
 /* Popup width is defined in JS using options */
 .leaflet-popup .leaflet-popup-content-wrapper {
-  background-color: var(--color-dark--1);
-  color: var(--color-light--2);
+  background-color: #2d3439;
+  color: #ececec;
   border-radius: 5px;
   padding-right: 0.6rem;
 }
@@ -205,13 +189,13 @@ a:visited {
 }
 
 .leaflet-popup .leaflet-popup-tip {
-  background-color: var(--color-dark--1);
+  background-color: #2d3439;
 }
 
 .running-popup .leaflet-popup-content-wrapper {
-  border-left: 5px solid var(--color-brand--2);
+  border-left: 5px solid #00c46a;
 }
 
 .cycling-popup .leaflet-popup-content-wrapper {
-  border-left: 5px solid var(--color-brand--1);
+  border-left: 5px solid #ffb545;
 }/*# sourceMappingURL=style.css.map */
