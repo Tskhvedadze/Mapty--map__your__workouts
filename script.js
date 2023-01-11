@@ -80,7 +80,13 @@ class App {
     #workouts = []
 
     constructor() {
+        // Get user position
         this._getPosition()
+
+        // Get data from localestorage
+        this._getLocaleStorage()
+
+        // Attach event handlers
         form.addEventListener('submit', this._newWorkout.bind(this))
         inputType.addEventListener('change', this._toggleElevationFields)
         containerWorkouts.addEventListener(
@@ -113,6 +119,10 @@ class App {
 
         // Handling click on map
         this.#map.on('click', this._showForm.bind(this))
+
+        this.#workouts.forEach((work) => {
+            this._renderWorkoutMarker(work)
+        })
     }
 
     _showForm(mapE) {
@@ -184,6 +194,9 @@ class App {
 
         // Hide form + Clear unput fields
         this._hideForm()
+
+        // Set locale Storage to all workouts
+        this._setLocaleStorage()
     }
 
     _renderWorkoutMarker(workout) {
@@ -270,7 +283,29 @@ class App {
             },
         })
 
-        workout.click()
+        // using the public interface
+        // workout.click()
+    }
+
+    _setLocaleStorage() {
+        localStorage.setItem('workouts', JSON.stringify(this.#workouts))
+    }
+
+    _getLocaleStorage() {
+        const data = JSON.parse(localStorage.getItem('workouts'))
+
+        if (!data) return
+
+        this.#workouts = data
+
+        this.#workouts.forEach((work) => {
+            this._renderWorkout(work)
+        })
+    }
+
+    reset() {
+        localStorage.removeItem('workouts')
+        location.reload()
     }
 }
 
