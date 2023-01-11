@@ -38,10 +38,43 @@ a:visited {
     padding: 3rem 5rem 4rem 5rem;
     display: flex;
     flex-direction: column;
+
     &--logo {
         height: 5.2rem;
-        align-self: center;
         margin-bottom: 4rem;
+    }
+    &__header {
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &--logo {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            &::after {
+                content: '';
+                font-family: $--sanSerif;
+                text-transform: uppercase;
+                font-weight: 1rem;
+                color: $--light--2;
+                transform: rotate(360deg) translate(-50%, 50%);
+                margin-left: 0.5rem;
+                position: absolute;
+                top: 7px;
+                left: 30px;
+            }
+
+            &:hover::after {
+                content: 'reset';
+                transform: rotate(0) translate(0) scale(1);
+                transition: transform 0.4s;
+            }
+        }
     }
 }
 

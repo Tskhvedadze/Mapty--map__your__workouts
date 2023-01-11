@@ -37,8 +37,38 @@ a:visited {
 }
 .sidebar--logo {
   height: 5.2rem;
-  align-self: center;
   margin-bottom: 4rem;
+}
+.sidebar__header {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.sidebar__header--logo {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar__header--logo::after {
+  content: "";
+  font-family: "Manrope", sans-serif;
+  text-transform: uppercase;
+  font-weight: 1rem;
+  color: #ececec;
+  transform: rotate(360deg) translate(-50%, 50%);
+  margin-left: 0.5rem;
+  position: absolute;
+  top: 7px;
+  left: 30px;
+}
+.sidebar__header--logo:hover::after {
+  content: "reset";
+  transform: rotate(0) translate(0) scale(1);
+  transition: transform 0.4s;
 }
 
 .workouts {

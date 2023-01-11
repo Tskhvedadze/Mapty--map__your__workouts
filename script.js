@@ -59,10 +59,6 @@ class Cycling extends Workout {
     }
 }
 
-// const run1 = new Running([39, -12], 5.2, 2.4, 178)
-// const cycling1 = new Cycling([39, -12], 5.2, 2.4, 523)
-// console.log(run1, cycling1)
-
 /////////////////////////////////////////
 // APPLICATION ARCHITECTURE
 const form = document.querySelector('.form')
@@ -72,6 +68,7 @@ const inputDistance = document.querySelector('.form__input--distance')
 const inputDuration = document.querySelector('.form__input--duration')
 const inputCadence = document.querySelector('.form__input--cadence')
 const inputElevation = document.querySelector('.form__input--elevation')
+const reset = document.querySelector('.resetBtn')
 
 class App {
     #map
@@ -93,6 +90,7 @@ class App {
             'click',
             this._moveToPopUp.bind(this),
         )
+        reset.addEventListener('click', this.reset.bind(this))
     }
 
     _getPosition() {
